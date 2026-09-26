@@ -4,44 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Pyare Khadus 💕 — Birthday Surprise</title>
-<meta name="description" content="A little birthday surprise made with way too much love.">
 <style>
-*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#0b0710}
-body{font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:#fff}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#0b0710}body{font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;color:#fff}
 .page{min-height:100vh;min-height:100svh;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;padding:20px 14px 48px;background:radial-gradient(circle at 50% 5%,#4b2049,#1a0d21 48%,#09060d)}
 .page:before{content:"";position:absolute;inset:0;opacity:.16;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:31px 31px}
 .glow{position:absolute;width:330px;height:330px;border-radius:50%;filter:blur(90px);opacity:.2;pointer-events:none}.a{background:#ff4f9a;left:-130px;top:-90px}.b{background:#8d65ff;right:-140px;bottom:-110px}
-.card{position:relative;z-index:2;width:min(760px,100%);text-align:center;padding:32px 18px;border:1px solid #ffffff20;background:#ffffff0c;backdrop-filter:blur(18px);border-radius:32px;box-shadow:0 30px 90px #0008;animation:rise .6s ease both}
-.tiny{font-size:11px;letter-spacing:2.8px;text-transform:uppercase;color:#ffb7d6;font-weight:900}
-.bear{font-size:76px;margin:4px 0 5px}h1,h2{margin:8px 0 12px;line-height:1.05}h1{font-size:clamp(39px,8vw,68px)}h2{font-size:clamp(31px,6vw,48px)}h1 span,h2 span{color:#ff8fbd}
-p{color:#eadde8;font-size:16px;line-height:1.5}
-.big{border:0;border-radius:999px;background:linear-gradient(135deg,#ff5c9b,#ff86bd);color:#fff;font-size:17px;font-weight:900;padding:15px 30px;cursor:pointer;box-shadow:0 12px 35px #ff4f9a55}
-.hint{margin-top:13px;font-size:12px;color:#bcaebd}
-.photoWrap{position:relative;width:min(430px,100%);margin:22px auto 15px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:#17101b;box-shadow:0 24px 55px #0008;border:1px solid #ffffff24}
-.photoWrap img{width:100%;height:100%;display:block;object-fit:cover}
-.photoShade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,4,12,.93) 0%,rgba(8,4,12,.3) 38%,transparent 66%)}
-.photoText{position:absolute;left:0;right:0;bottom:0;padding:25px 18px 21px;text-align:center}
-.photoTitle{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#ffc1da;font-weight:900;margin-bottom:7px}
-.photoWish{font-size:18px;font-weight:800;line-height:1.3;text-shadow:0 2px 12px #000}
-.photoNumber{position:absolute;top:12px;right:12px;background:#0008;border:1px solid #fff3;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:800}
-.controls{display:flex;justify-content:center;align-items:center;gap:9px;margin-top:12px;flex-wrap:wrap}
-.nav{border:1px solid #ffffff22;background:#ffffff10;color:#fff;border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer}
-.nav.primary{background:linear-gradient(135deg,#ff5c9b,#ff86bd);border:0}
-.dots{display:flex;justify-content:center;gap:6px;margin:14px 0 3px}.dot{width:7px;height:7px;border-radius:50%;background:#ffffff2b}.dot.on{background:#ff86bd;box-shadow:0 0 10px #ff86bd}
-.gift{display:block;margin:25px auto 12px;border:0;background:none;font-size:125px;cursor:pointer;transition:.25s;filter:drop-shadow(0 18px 20px #0005)}.gift:hover{transform:translateY(-8px) rotate(-3deg)}
-.open{border:0;background:none;color:#ffb5d4;font-weight:900;letter-spacing:2px;cursor:pointer}
-.confetti{font-size:24px}.panda{font-size:104px;animation:panda .9s cubic-bezier(.2,1.6,.4,1)}
-.final h1{font-size:clamp(43px,10vw,76px)}.love{font-size:25px;font-weight:800;color:#fff}
-.again{margin-top:12px;border:1px solid #ffffff25;background:#ffffff0b;color:#d9cad7;border-radius:999px;padding:10px 17px;cursor:pointer}
-footer{position:absolute;bottom:11px;z-index:2;color:#806d7d;font-size:10px;letter-spacing:2px}
-.burst{position:fixed;left:50%;top:48%;font-size:24px;z-index:50;pointer-events:none;transition:transform .8s,opacity .8s}
-@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
-@keyframes panda{from{transform:translateY(120px) scale(.2);opacity:0}to{transform:none;opacity:1}}
-@media(max-width:520px){.card{padding:28px 13px;border-radius:27px}.photoWrap{border-radius:25px}.photoWish{font-size:16px}}
+.card{position:relative;z-index:2;width:min(760px,100%);text-align:center;padding:30px 16px;border:1px solid #ffffff20;background:#ffffff0c;backdrop-filter:blur(18px);border-radius:32px;box-shadow:0 30px 90px #0008;animation:rise .55s ease both}
+.tiny{font-size:11px;letter-spacing:2.8px;text-transform:uppercase;color:#ffb7d6;font-weight:900}.bear{font-size:76px;margin:4px 0}h1,h2{margin:8px 0 12px;line-height:1.05}h1{font-size:clamp(39px,8vw,68px)}h2{font-size:clamp(31px,6vw,48px)}h1 span,h2 span{color:#ff8fbd}p{color:#eadde8;font-size:16px;line-height:1.5}
+.big,.nav.primary{border:0;border-radius:999px;background:linear-gradient(135deg,#ff5c9b,#ff86bd);color:#fff;font-size:17px;font-weight:900;padding:15px 30px;cursor:pointer;box-shadow:0 12px 35px #ff4f9a55}.hint{margin-top:13px;font-size:12px;color:#bcaebd}
+.balloonStage{margin:22px auto 8px;min-height:430px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px 13px;align-items:center;justify-items:center}
+.balloon{position:relative;width:84px;height:104px;border-radius:52% 52% 48% 48%;border:0;cursor:pointer;background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#ff78b1,#c53e8c);box-shadow:inset -12px -14px 20px #6c1750aa,0 14px 25px #0005;animation:float 2.5s ease-in-out infinite;transition:.2s}
+.balloon:nth-child(2){background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#a888ff,#6241c5);animation-delay:.25s}
+.balloon:nth-child(3){background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#ff9a70,#dc4b59);animation-delay:.5s}
+.balloon:nth-child(4){background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#ff7eb9,#a92e78);animation-delay:.75s}
+.balloon:nth-child(5){background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#75d9ff,#3682d6);animation-delay:1s}
+.balloon:nth-child(6){background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#ffd46f,#ec8b36);animation-delay:1.25s}
+.balloon:nth-child(7){background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#a5efad,#42a878);animation-delay:1.5s}
+.balloon:nth-child(8){background:radial-gradient(circle at 32% 25%,#fff9 0 7%,transparent 8%),linear-gradient(135deg,#f8a2ff,#a84ac9);animation-delay:1.75s}
+.balloon:before{content:"";position:absolute;width:2px;height:72px;background:#ffffff55;left:50%;top:100%;transform:translateX(-50%)}.balloon:after{content:"";position:absolute;bottom:-7px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid #b7357d}
+.balloon small{position:absolute;inset:0;display:grid;place-items:center;font-size:20px;font-weight:900;text-shadow:0 2px 5px #0005}.balloon.popped{visibility:hidden;animation:pop .3s forwards}
+.photoWrap{position:relative;width:min(430px,100%);margin:18px auto 15px;aspect-ratio:9/16;border-radius:28px;overflow:hidden;background:#17101b;box-shadow:0 24px 55px #0008;border:1px solid #ffffff24}.photoWrap img{width:100%;height:100%;display:block;object-fit:cover}.photoShade{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,4,12,.94) 0%,rgba(8,4,12,.3) 42%,transparent 68%)}.photoText{position:absolute;left:0;right:0;bottom:0;padding:25px 18px 21px}.photoTitle{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;color:#ffc1da;font-weight:900;margin-bottom:7px}.photoWish{font-size:18px;font-weight:800;line-height:1.3;text-shadow:0 2px 12px #000}.photoNumber{position:absolute;top:12px;right:12px;background:#0008;border:1px solid #fff3;padding:7px 11px;border-radius:999px;font-size:12px;font-weight:800}
+.nav{border:1px solid #ffffff22;background:#ffffff10;color:#fff;border-radius:999px;padding:11px 17px;font-weight:800;cursor:pointer}.controls{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}.gift{display:block;margin:25px auto 12px;border:0;background:none;font-size:125px;cursor:pointer;filter:drop-shadow(0 18px 20px #0005)}.open{border:0;background:none;color:#ffb5d4;font-weight:900;letter-spacing:2px;cursor:pointer}.panda{font-size:104px;animation:panda .9s cubic-bezier(.2,1.6,.4,1)}.final h1{font-size:clamp(43px,10vw,76px)}.love{font-size:25px;font-weight:800;color:#fff}.again{margin-top:12px;border:1px solid #ffffff25;background:#ffffff0b;color:#d9cad7;border-radius:999px;padding:10px 17px;cursor:pointer}.confetti{font-size:24px}footer{position:absolute;bottom:11px;z-index:2;color:#806d7d;font-size:10px;letter-spacing:2px}.burst{position:fixed;left:50%;top:48%;font-size:24px;z-index:50;pointer-events:none;transition:transform .8s,opacity .8s}
+@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}@keyframes float{50%{transform:translateY(-11px) rotate(2deg)}}@keyframes pop{to{transform:scale(1.7);opacity:0}}@keyframes panda{from{transform:translateY(120px) scale(.2);opacity:0}to{transform:none;opacity:1}}
+@media(max-width:560px){.card{padding:27px 12px;border-radius:27px}.balloonStage{grid-template-columns:repeat(2,1fr);min-height:520px;gap:17px 20px}.balloon{width:78px;height:98px}.photoWish{font-size:16px}}
 </style>
 </head>
-<body>
-<main class="page"><div class="glow a"></div><div class="glow b"></div><div id="app"></div><footer>made with way too much love ♡</footer></main>
+<body><main class="page"><div class="glow a"></div><div class="glow b"></div><div id="app"></div><footer>made with way too much love ♡</footer></main>
 <script>
 (function(){
 const photos=[
@@ -52,56 +40,38 @@ const photos=[
 "https://d2ol7oe51mr4n9.cloudfront.net/user_3JXA5jEIQrKPsvAaQEgxA5JadrD/0240f1fc-6617-436f-919c-ca0a77a6e360.jpg",
 "https://d2ol7oe51mr4n9.cloudfront.net/user_3JXA5jEIQrKPsvAaQEgxA5JadrD/e0439fa1-1b00-4664-b6e4-6b16cd35d9af.jpg",
 "https://d2ol7oe51mr4n9.cloudfront.net/user_3JXA5jEIQrKPsvAaQEgxA5JadrD/7cc233f8-29ad-40b3-9f6e-00d9bc23bd31.jpg",
-"https://d2ol7oe51mr4n9.cloudfront.net/user_3JXA5jEIQrKPsvAaQEgxA5JadrD/9fd77c62-2b07-49ab-b82d-90771ae052e9.jpg"
-];
+"https://d2ol7oe51mr4n9.cloudfront.net/user_3JXA5jEIQrKPsvAaQEgxA5JadrD/9fd77c62-2b07-49ab-b82d-90771ae052e9.jpg"];
 const wishes=[
-"Sabse pehle… tumhari smile hamesha aisi hi cute rahe ❤️",
-"Chahe kitna bhi busy ho, tumhare days hamesha khushiyon se bhare rahein ✨",
-"Tum jo bhi chaho, woh tumhe mile… because you deserve all the happiness 🥹❤️",
-"Ek request hai… thoda sa kam khadus rehna 😂💕",
+"Tumhari smile hamesha aisi hi cute rahe ❤️",
+"Har din tumhare liye thoda aur special ho ✨",
+"Tumhe saari happiness mile jo tum deserve karte ho 🥹❤️",
+"Aur haan… thoda kam khadus rehna 😂💕",
 "Bas aise hi handsome rehna… aur mujhe tang karte rehna 😌❤️",
 "Life tumhe bahut saare beautiful moments aur memories de 🌸✨",
-"Thank you for being someone who is genuinely very special to me 💗",
-"Happy Birthday, my favourite person… ❤️ I hope you always stay this amazing."
+"You are genuinely very special to me 💗",
+"Happy Birthday, my favourite person 🎂❤️"
 ];
-const titles=["A little memory 💕","Looking good, Khadus 😌","My favourite face ❤️","Okayyy, handsome 😏","This one is cute 🥹","Adventure mode ✨","Old but gold 🖤","And finally… 💗"];
-let stage="open",photo=0;
-function burst(){
- for(let i=0;i<16;i++){const s=document.createElement("span");s.className="burst";s.textContent=["💖","✨","🎉","💕","🌸"][i%5];document.body.appendChild(s);requestAnimationFrame(()=>{s.style.transform="translate("+((Math.random()-.5)*430)+"px,"+((Math.random()-.5)*350)+"px) rotate("+((Math.random()*90)-45)+"deg)";s.style.opacity="0"});setTimeout(()=>s.remove(),850)}
-}
+const titles=["A little wish 💕","For that cute face 😌","My favourite person ❤️","Okayyy, handsome 😏","This one is cute 🥹","Adventure boy ✨","Old but gold 🖤","And finally… 💗"];
+let stage="open",revealed=Array(8).fill(false),current=-1;
+function burst(){for(let i=0;i<18;i++){const s=document.createElement("span");s.className="burst";s.textContent=["💖","✨","🎉","💕","🌸"][i%5];document.body.appendChild(s);requestAnimationFrame(()=>{s.style.transform="translate("+((Math.random()-.5)*430)+"px,"+((Math.random()-.5)*350)+"px) rotate("+((Math.random()*90)-45)+"deg)";s.style.opacity="0"});setTimeout(()=>s.remove(),850)}}
 function btn(label,cls,fn){const b=document.createElement("button");b.className=cls;b.textContent=label;b.addEventListener("click",fn);return b}
 function render(){
- const app=document.getElementById("app");app.innerHTML="";
- if(stage==="open"){
-  const c=document.createElement("section");c.className="card";
-  c.innerHTML='<div class="tiny">A little surprise for you 💌</div><div class="bear">🐼</div><h1>Hey, <span>Pyare Khadus</span> 🥹</h1><p>8 photos, 8 little wishes… and one big birthday surprise just for you ❤️</p>';
-  c.appendChild(btn("OPEN 💖","big",()=>{stage="photos";photo=0;burst();render()}));
-  const h=document.createElement("div");h.className="hint";h.textContent="Tap the button… your memories are waiting ✨";c.appendChild(h);app.appendChild(c);return;
- }
- if(stage==="photos"){
-  const c=document.createElement("section");c.className="card";
-  c.innerHTML='<div class="tiny">YOUR LITTLE PHOTO ALBUM 📸</div><h2>For my favourite <span>Khadus</span> ❤️</h2><p>Har photo ke saath tumhare liye ek little wish hai.</p>';
-  const pw=document.createElement("div");pw.className="photoWrap";
-  const im=document.createElement("img");im.src=photos[photo];im.alt="Birthday photo "+(photo+1);pw.appendChild(im);
-  const sh=document.createElement("div");sh.className="photoShade";pw.appendChild(sh);
-  const num=document.createElement("div");num.className="photoNumber";num.textContent=(photo+1)+" / "+photos.length;pw.appendChild(num);
-  const txt=document.createElement("div");txt.className="photoText";txt.innerHTML='<div class="photoTitle">'+titles[photo]+'</div><div class="photoWish">'+wishes[photo]+'</div>';pw.appendChild(txt);c.appendChild(pw);
-  const dots=document.createElement("div");dots.className="dots";photos.forEach((_,i)=>{const d=document.createElement("span");d.className="dot"+(i===photo?" on":"");dots.appendChild(d)});c.appendChild(dots);
-  const controls=document.createElement("div");controls.className="controls";
-  if(photo>0)controls.appendChild(btn("← Back","nav",()=>{photo--;render()}));
-  if(photo<photos.length-1)controls.appendChild(btn("Next Photo 💕","nav primary",()=>{photo++;burst();render()}));
-  else controls.appendChild(btn("All my wishes 🎁 →","nav primary",()=>{stage="gift";burst();render()}));
-  c.appendChild(controls);app.appendChild(c);return;
- }
- if(stage==="gift"){
-  const c=document.createElement("section");c.className="card";c.innerHTML='<div class="tiny">ONE LAST SURPRISE 🎀</div><h2>Okay… now open this 🎁</h2><p>Photos toh dekh li… ab asli surprise baaki hai. 🥹</p>';
-  c.appendChild(btn("🎁","gift",()=>{stage="final";burst();render()}));c.appendChild(btn("CLICK TO OPEN ✨","open",()=>{stage="final";burst();render()}));app.appendChild(c);return;
- }
- const c=document.createElement("section");c.className="card final";c.innerHTML='<div class="confetti">✨ 💕 🎉 💗 🎂 💖 ✨</div><div class="panda">🐼</div><div class="tiny">FOR MY FAVOURITE KHADUS</div><h1>HAPPY BIRTHDAY<br><span>CUTIE ❤️</span></h1><p class="love">I love uh so much 🥹❤️</p><p>Stay exactly the way you are...<br>bas thoda sa kam khadus 😂</p>';
- c.appendChild(btn("Replay ↻","again",()=>{stage="open";photo=0;render()}));app.appendChild(c);
-}
+const app=document.getElementById("app");app.innerHTML="";
+if(stage==="open"){const c=document.createElement("section");c.className="card";c.innerHTML='<div class="tiny">A little surprise for you 💌</div><div class="bear">🐼</div><h1>Hey, <span>Pyare Khadus</span> 🥹</h1><p>8 balloons, 8 photos, 8 little wishes… and one big birthday surprise ❤️</p>';c.appendChild(btn("OPEN 💖","big",()=>{stage="balloons";burst();render()}));const h=document.createElement("div");h.className="hint";h.textContent="Pehle balloons fodho… har balloon ke andar ek photo aur wish hai 🎈📸";c.appendChild(h);app.appendChild(c);return}
+if(stage==="balloons"){
+const c=document.createElement("section");c.className="card";c.innerHTML='<div class="tiny">BIRTHDAY GAME 🎈</div><h2>Pop the <span>Balloons</span> 💕</h2><p>Har balloon mein ek photo + ek special wish chhupi hai.<br><b>Balloon fodho → photo dekho → next balloon! 🎈</b></p>';
+const grid=document.createElement("div");grid.className="balloonStage";
+for(let i=0;i<8;i++){const b=document.createElement("button");b.className="balloon"+(revealed[i]?" popped":"");b.innerHTML="<small>"+(revealed[i]?"":"💗")+"</small>";if(!revealed[i])b.addEventListener("click",()=>{revealed[i]=true;current=i;stage="photo";burst();render()});grid.appendChild(b)}
+c.appendChild(grid);const left=revealed.filter(Boolean).length;const p=document.createElement("p");p.textContent=left+" / 8 balloons popped 🎈";c.appendChild(p);app.appendChild(c);return}
+if(stage==="photo"){
+const c=document.createElement("section");c.className="card";c.innerHTML='<div class="tiny">BALLOON POPPED! 🎉</div><h2>Surprise! <span>📸❤️</span></h2>';
+const pw=document.createElement("div");pw.className="photoWrap";const im=document.createElement("img");im.src=photos[current];im.alt="Birthday memory";pw.appendChild(im);const sh=document.createElement("div");sh.className="photoShade";pw.appendChild(sh);const num=document.createElement("div");num.className="photoNumber";num.textContent=(current+1)+" / 8";pw.appendChild(num);const txt=document.createElement("div");txt.className="photoText";txt.innerHTML='<div class="photoTitle">'+titles[current]+'</div><div class="photoWish">'+wishes[current]+'</div>';pw.appendChild(txt);c.appendChild(pw);
+const controls=document.createElement("div");controls.className="controls";controls.appendChild(btn("← Pop More Balloons 🎈","nav primary",()=>{stage="balloons";render()}));c.appendChild(controls);app.appendChild(c);return}
+if(stage==="gift"){const c=document.createElement("section");c.className="card";c.innerHTML='<div class="tiny">ALL BALLOONS POPPED 🎉</div><h2>You found every wish! 💗</h2><p>Ab last surprise tumhara wait kar raha hai…</p>';c.appendChild(btn("🎁","gift",()=>{stage="final";burst();render()}));c.appendChild(btn("CLICK TO OPEN ✨","open",()=>{stage="final";burst();render()}));app.appendChild(c);return}
+const c=document.createElement("section");c.className="card final";c.innerHTML='<div class="confetti">✨ 💕 🎉 💗 🎂 💖 ✨</div><div class="panda">🐼</div><div class="tiny">FOR MY FAVOURITE KHADUS</div><h1>HAPPY BIRTHDAY<br><span>CUTIE ❤️</span></h1><p class="love">I love uh so much 🥹❤️</p><p>Stay exactly the way you are...<br>bas thoda sa kam khadus 😂</p>';c.appendChild(btn("Replay ↻","again",()=>{stage="open";revealed=Array(8).fill(false);current=-1;render()}));app.appendChild(c)}
+const oldRender=render;const original=render;
+const observer=new MutationObserver(()=>{if(stage==="balloons"&&revealed.every(Boolean)){stage="gift";setTimeout(render,250)}});observer.observe(document.getElementById("app"),{childList:true,subtree:true});
 render();
 })();
 </script>
-</body>
-</html>
+</body></html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pyare Khadus 💕 — Birthday Surprise</title>
+<meta name="description" content="A tiny interactive birthday surprise made with love.">
+<style>
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#0d0912}
+body{font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif}
+.birthday-page{min-height:100vh;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;padding:24px 16px 48px;background:radial-gradient(circle at 50% 8%,#432044,#190f20 48%,#0d0912);color:#fff}
+.birthday-page:before{content:"";position:absolute;inset:0;opacity:.2;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:32px 32px}
+.glow{position:absolute;width:330px;height:330px;border-radius:50%;filter:blur(85px);opacity:.22}.glow-a{background:#ff4f9a;left:-120px;top:-80px}.glow-b{background:#8d65ff;right:-130px;bottom:-100px}
+.card{position:relative;z-index:2;width:min(700px,100%);text-align:center;padding:44px 24px;border:1px solid #ffffff22;background:#ffffff10;backdrop-filter:blur(18px);border-radius:34px;box-shadow:0 30px 90px #0007;animation:rise .65s ease both}.wide{max-width:900px}
+.tiny{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#ffb7d6;font-weight:800}.bear{font-size:78px;margin:8px 0}
+h1,h2{margin:8px 0 12px;line-height:1.05}h1{font-size:clamp(40px,8vw,70px)}h2{font-size:clamp(34px,6vw,52px)}h1 span{color:#ff8fbd}
+p{color:#e9dce8;font-size:17px;line-height:1.5}.big{border:0;border-radius:999px;background:linear-gradient(135deg,#ff5c9b,#ff86bd);color:#fff;font-size:18px;font-weight:900;padding:16px 34px;cursor:pointer;box-shadow:0 12px 35px #ff4f9a55}.hint{margin-top:14px;font-size:12px;color:#bcaebd}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px auto;max-width:700px}.balloon,.wish{min-height:130px;border-radius:26px}.balloon{border:0;cursor:pointer;box-shadow:inset -15px -16px 24px #0002,0 16px 30px #0003;transition:.18s}.balloon:hover{transform:translateY(-5px)}.balloon b{font-size:25px;color:#fff}
+.b0{background:#ff6c9d}.b1{background:#8b70ff}.b2{background:#4fc7dd}.b3{background:#ff9c58}.b4{background:#7acb75}.b5{background:#d778d7}
+.wish{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;background:#fff1;border:1px dashed #ff91bc;animation:pop .4s ease}.wish p{font-size:14px;margin:8px 0}.progress{font-size:13px;color:#cdbdca;margin-bottom:16px}.smallbtn{font-size:15px;padding:13px 24px}
+.gift{display:block;margin:24px auto 12px;border:0;background:none;font-size:125px;cursor:pointer;transition:.25s;filter:drop-shadow(0 18px 20px #0005)}.gift:hover{transform:translateY(-8px) rotate(-3deg)}.open{border:0;background:none;color:#ffb5d4;font-weight:900;letter-spacing:2px;cursor:pointer}
+.confetti{font-size:25px}.panda{font-size:105px;animation:panda .9s cubic-bezier(.2,1.6,.4,1)}.final h1{font-size:clamp(44px,10vw,78px)}.final h1 span{color:#ff8dbd}.love{font-size:25px;font-weight:800;color:#fff}.again{margin-top:12px;border:1px solid #ffffff25;background:#ffffff0b;color:#d9cad7;border-radius:999px;padding:10px 17px;cursor:pointer}
+footer{position:absolute;bottom:12px;z-index:2;color:#806d7d;font-size:11px;letter-spacing:2px}
+.burst{position:fixed;left:50%;top:48%;font-size:24px;z-index:50;pointer-events:none;transition:transform .8s,opacity .8s}
+@keyframes rise{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}@keyframes pop{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}@keyframes panda{from{transform:translateY(120px) scale(.2);opacity:0}to{transform:none;opacity:1}}
+@media(max-width:620px){.grid{grid-template-columns:repeat(2,1fr)}.card{padding:34px 16px;border-radius:28px}}
+</style>
+</head>
+<body>
+<main class="birthday-page"><div class="glow glow-a"></div><div class="glow glow-b"></div><div id="app"></div><footer>made with way too much love ♡</footer></main>
+<script>
+const wishes=["Tumhari smile hamesha aisi hi cute rahe 💕","Har din tumhare liye thoda aur special ho ✨","Tumhe saari happiness mile jo tum deserve karte ho 🥰","Aur haan... thoda kam khadus rehna 😂❤️","You are genuinely very special to me 💗","Happy Birthday, my favourite person 🎂✨"];
+let stage="open",popped=[];
+function burst(){for(let i=0;i<14;i++){const s=document.createElement("span");s.className="burst";s.textContent=["💖","✨","🎉","💕"][i%4];document.body.appendChild(s);requestAnimationFrame(()=>{s.style.transform="translate("+((Math.random()-.5)*400)+"px,"+((Math.random()-.5)*320)+"px)";s.style.opacity="0"});setTimeout(()=>s.remove(),850)}}
+function render(){
+const app=document.getElementById("app");
+if(stage==="open") app.innerHTML='<section class="card"><div class="tiny">A little surprise for you 💌</div><div class="bear">🐼</div><h1>Hey, <span>Pyare Khadus</span> 🥹</h1><p>Someone made a tiny little birthday surprise just for you...</p><button class="big" onclick="go('balloons')">OPEN 💖</button><div class="hint">Tap the button. I promise it’s worth it ✨</div></section>';
+if(stage==="balloons") app.innerHTML='<section class="card wide"><div class="tiny">LEVEL 1 · BIRTHDAY MISSION 🎈</div><h2>Pop the balloons!</h2><p>Har balloon ke andar tumhare liye ek little wish hai 💕</p><div class="grid">'+wishes.map((w,i)=>popped.includes(i)?'<div class="wish">💌<p>'+w+'</p></div>':'<button class="balloon b'+(i%6)+'" onclick="popBalloon('+i+')"><b>'+ (i+1) +'</b></button>').join('')+'</div><div class="progress">'+popped.length+' / '+wishes.length+' balloons popped</div>'+(popped.length===wishes.length?'<button class="big smallbtn" onclick="go(\'gift\')">I found all the wishes 🎁 →</button>':'')+'</section>';
+if(stage==="gift") app.innerHTML='<section class="card"><div class="tiny">FINAL SURPRISE 🎀</div><h2>One last thing...</h2><p>There’s something waiting inside this box for you.</p><button class="gift" onclick="go(\'final\')">🎁</button><button class="open" onclick="go(\'final\')">CLICK TO OPEN ✨</button></section>';
+if(stage==="final") app.innerHTML='<section class="card final"><div class="confetti">✨ 💕 🎉 💗 🎂 💖 ✨</div><div class="panda">🐼</div><div class="tiny">FOR MY FAVOURITE KHADUS</div><h1>HAPPY BIRTHDAY<br/><span>CUTIE ❤️</span></h1><p class="love">I love uh so much 🥹❤️</p><p>Stay exactly the way you are...<br/>bas thoda sa kam khadus 😂</p><button class="again" onclick="replay()">Replay ↻</button></section>';
+}
+function go(s){stage=s;burst();render()} function popBalloon(i){if(!popped.includes(i)){popped.push(i);burst();render()}} function replay(){stage="open";popped=[];render()} render();
+</script>
+</body>
+</html>

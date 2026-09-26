@@ -8,9 +8,9 @@
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#0d0912}
 body{font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif}
-.birthday-page{min-height:100vh;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;padding:24px 16px 48px;background:radial-gradient(circle at 50% 8%,#432044,#190f20 48%,#0d0912);color:#fff}
-.birthday-page:before{content:"";position:absolute;inset:0;opacity:.2;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:32px 32px}
-.glow{position:absolute;width:330px;height:330px;border-radius:50%;filter:blur(85px);opacity:.22}.glow-a{background:#ff4f9a;left:-120px;top:-80px}.glow-b{background:#8d65ff;right:-130px;bottom:-100px}
+.page{min-height:100vh;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;padding:24px 16px 48px;background:radial-gradient(circle at 50% 8%,#432044,#190f20 48%,#0d0912);color:#fff}
+.page:before{content:"";position:absolute;inset:0;opacity:.2;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:32px 32px}
+.glow{position:absolute;width:330px;height:330px;border-radius:50%;filter:blur(85px);opacity:.22}.a{background:#ff4f9a;left:-120px;top:-80px}.b{background:#8d65ff;right:-130px;bottom:-100px}
 .card{position:relative;z-index:2;width:min(700px,100%);text-align:center;padding:44px 24px;border:1px solid #ffffff22;background:#ffffff10;backdrop-filter:blur(18px);border-radius:34px;box-shadow:0 30px 90px #0007;animation:rise .65s ease both}.wide{max-width:900px}
 .tiny{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#ffb7d6;font-weight:800}.bear{font-size:78px;margin:8px 0}
 h1,h2{margin:8px 0 12px;line-height:1.05}h1{font-size:clamp(40px,8vw,70px)}h2{font-size:clamp(34px,6vw,52px)}h1 span{color:#ff8fbd}
@@ -27,19 +27,104 @@ footer{position:absolute;bottom:12px;z-index:2;color:#806d7d;font-size:11px;lett
 </style>
 </head>
 <body>
-<main class="birthday-page"><div class="glow glow-a"></div><div class="glow glow-b"></div><div id="app"></div><footer>made with way too much love ♡</footer></main>
+<main class="page">
+<div class="glow a"></div><div class="glow b"></div>
+<div id="app"></div>
+<footer>made with way too much love ♡</footer>
+</main>
 <script>
-const wishes=["Tumhari smile hamesha aisi hi cute rahe 💕","Har din tumhare liye thoda aur special ho ✨","Tumhe saari happiness mile jo tum deserve karte ho 🥰","Aur haan... thoda kam khadus rehna 😂❤️","You are genuinely very special to me 💗","Happy Birthday, my favourite person 🎂✨"];
-let stage="open",popped=[];
-function burst(){for(let i=0;i<14;i++){const s=document.createElement("span");s.className="burst";s.textContent=["💖","✨","🎉","💕"][i%4];document.body.appendChild(s);requestAnimationFrame(()=>{s.style.transform="translate("+((Math.random()-.5)*400)+"px,"+((Math.random()-.5)*320)+"px)";s.style.opacity="0"});setTimeout(()=>s.remove(),850)}}
-function render(){
-const app=document.getElementById("app");
-if(stage==="open") app.innerHTML='<section class="card"><div class="tiny">A little surprise for you 💌</div><div class="bear">🐼</div><h1>Hey, <span>Pyare Khadus</span> 🥹</h1><p>Someone made a tiny little birthday surprise just for you...</p><button class="big" onclick="go('balloons')">OPEN 💖</button><div class="hint">Tap the button. I promise it’s worth it ✨</div></section>';
-if(stage==="balloons") app.innerHTML='<section class="card wide"><div class="tiny">LEVEL 1 · BIRTHDAY MISSION 🎈</div><h2>Pop the balloons!</h2><p>Har balloon ke andar tumhare liye ek little wish hai 💕</p><div class="grid">'+wishes.map((w,i)=>popped.includes(i)?'<div class="wish">💌<p>'+w+'</p></div>':'<button class="balloon b'+(i%6)+'" onclick="popBalloon('+i+')"><b>'+ (i+1) +'</b></button>').join('')+'</div><div class="progress">'+popped.length+' / '+wishes.length+' balloons popped</div>'+(popped.length===wishes.length?'<button class="big smallbtn" onclick="go(\'gift\')">I found all the wishes 🎁 →</button>':'')+'</section>';
-if(stage==="gift") app.innerHTML='<section class="card"><div class="tiny">FINAL SURPRISE 🎀</div><h2>One last thing...</h2><p>There’s something waiting inside this box for you.</p><button class="gift" onclick="go(\'final\')">🎁</button><button class="open" onclick="go(\'final\')">CLICK TO OPEN ✨</button></section>';
-if(stage==="final") app.innerHTML='<section class="card final"><div class="confetti">✨ 💕 🎉 💗 🎂 💖 ✨</div><div class="panda">🐼</div><div class="tiny">FOR MY FAVOURITE KHADUS</div><h1>HAPPY BIRTHDAY<br/><span>CUTIE ❤️</span></h1><p class="love">I love uh so much 🥹❤️</p><p>Stay exactly the way you are...<br/>bas thoda sa kam khadus 😂</p><button class="again" onclick="replay()">Replay ↻</button></section>';
-}
-function go(s){stage=s;burst();render()} function popBalloon(i){if(!popped.includes(i)){popped.push(i);burst();render()}} function replay(){stage="open";popped=[];render()} render();
+(function(){
+  var wishes=[
+    "Tumhari smile hamesha aisi hi cute rahe 💕",
+    "Har din tumhare liye thoda aur special ho ✨",
+    "Tumhe saari happiness mile jo tum deserve karte ho 🥰",
+    "Aur haan... thoda kam khadus rehna 😂❤️",
+    "You are genuinely very special to me 💗",
+    "Happy Birthday, my favourite person 🎂✨"
+  ];
+  var stage="open";
+  var popped=[];
+
+  function burst(){
+    for(var i=0;i<14;i++){
+      var s=document.createElement("span");
+      s.className="burst";
+      s.textContent=["💖","✨","🎉","💕"][i%4];
+      document.body.appendChild(s);
+      (function(el){
+        requestAnimationFrame(function(){
+          el.style.transform="translate("+((Math.random()-.5)*400)+"px,"+((Math.random()-.5)*320)+"px)";
+          el.style.opacity="0";
+        });
+        setTimeout(function(){el.remove()},850);
+      })(s);
+    }
+  }
+
+  function button(label,cls,action){
+    var b=document.createElement("button");
+    b.className=cls||"";
+    b.textContent=label;
+    b.addEventListener("click",action);
+    return b;
+  }
+
+  function render(){
+    var app=document.getElementById("app");
+    app.innerHTML="";
+
+    if(stage==="open"){
+      var card=document.createElement("section"); card.className="card";
+      card.innerHTML='<div class="tiny">A little surprise for you 💌</div><div class="bear">🐼</div><h1>Hey, <span>Pyare Khadus</span> 🥹</h1><p>Someone made a tiny little birthday surprise just for you...</p>';
+      card.appendChild(button("OPEN 💖","big",function(){stage="balloons";burst();render();}));
+      var hint=document.createElement("div"); hint.className="hint"; hint.textContent="Tap the button. I promise it’s worth it ✨"; card.appendChild(hint);
+      app.appendChild(card);
+      return;
+    }
+
+    if(stage==="balloons"){
+      var wrap=document.createElement("section"); wrap.className="card wide";
+      wrap.innerHTML='<div class="tiny">LEVEL 1 · BIRTHDAY MISSION 🎈</div><h2>Pop the balloons!</h2><p>Har balloon ke andar tumhare liye ek little wish hai 💕</p>';
+      var grid=document.createElement("div"); grid.className="grid";
+      wishes.forEach(function(w,i){
+        if(popped.indexOf(i)!==-1){
+          var wish=document.createElement("div"); wish.className="wish";
+          wish.innerHTML='<div>💌</div><p>'+w+'</p>';
+          grid.appendChild(wish);
+        }else{
+          var b=button(String(i+1),"balloon b"+i,function(){
+            popped.push(i); burst(); render();
+          });
+          var strong=document.createElement("b"); strong.textContent=String(i+1);
+          b.textContent=""; b.appendChild(strong); grid.appendChild(b);
+        }
+      });
+      wrap.appendChild(grid);
+      var progress=document.createElement("div"); progress.className="progress"; progress.textContent=popped.length+" / "+wishes.length+" balloons popped"; wrap.appendChild(progress);
+      if(popped.length===wishes.length){
+        wrap.appendChild(button("I found all the wishes 🎁 →","big smallbtn",function(){stage="gift";burst();render();}));
+      }
+      app.appendChild(wrap);
+      return;
+    }
+
+    if(stage==="gift"){
+      var gift=document.createElement("section"); gift.className="card";
+      gift.innerHTML='<div class="tiny">FINAL SURPRISE 🎀</div><h2>One last thing...</h2><p>There’s something waiting inside this box for you.</p>';
+      gift.appendChild(button("🎁","gift",function(){stage="final";burst();render();}));
+      gift.appendChild(button("CLICK TO OPEN ✨","open",function(){stage="final";burst();render();}));
+      app.appendChild(gift);
+      return;
+    }
+
+    var fin=document.createElement("section"); fin.className="card final";
+    fin.innerHTML='<div class="confetti">✨ 💕 🎉 💗 🎂 💖 ✨</div><div class="panda">🐼</div><div class="tiny">FOR MY FAVOURITE KHADUS</div><h1>HAPPY BIRTHDAY<br><span>CUTIE ❤️</span></h1><p class="love">I love uh so much 🥹❤️</p><p>Stay exactly the way you are...<br>bas thoda sa kam khadus 😂</p>';
+    fin.appendChild(button("Replay ↻","again",function(){stage="open";popped=[];render();}));
+    app.appendChild(fin);
+  }
+
+  render();
+})();
 </script>
 </body>
 </html>
